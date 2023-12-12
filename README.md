@@ -20,8 +20,6 @@ Frontend:
 
 State Management (if using React): Redux or Context API
 
-For managing the state of your application, consider using Redux or React's Context API.
-
 Architecture:
 Microserviço/Monolith
 (dividing the application into smaller, independent services) or a monolithic architecture (single, unified application).
@@ -57,9 +55,9 @@ Input Validation:
 Regular Updates:
 - Software components
 - Including frameworks
-- libraries
-- server software
-- security vulnerabilities.
+- Libraries
+- Server software
+- Security vulnerabilities.
 
 Considerações adicionais - Futuro do Futuro:
 
