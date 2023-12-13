@@ -4,7 +4,7 @@ Maria Rosa Layette's &amp; Dresses | Maria Rosa Enxoval e Vestidos.
 ### Backend:
 - Java
 - Spring Boot
-- Database - TBT - MySQL or PostgreSQL
+- Database - TBD - MySQL or PostgreSQL
 
 ### ORM (Object-Relational Mapping): Hibernate
 
