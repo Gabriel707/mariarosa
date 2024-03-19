@@ -1,9 +1,9 @@
 import os
 
-clients = [{'nome': 'Gabriella Izabel', 'categoria': 'Premium', 'ativo': True},
-           {'nome': 'Andre Santana', 'categoria': 'Platinum', 'ativo': False},
-           {'nome': 'Rosane Nô', 'categoria': 'Gold', 'ativo': True},
-           {'nome': 'Gabriel Araujo', 'categoria': 'Basic', 'ativo': True}]
+clientes = [{'nome': 'Gabriella Izabel', 'categoria': 'Premium', 'ativo': True},
+            {'nome': 'Andre Santana', 'categoria': 'Platinum', 'ativo': False},
+            {'nome': 'Rosane Nô', 'categoria': 'Gold', 'ativo': True},
+            {'nome': 'Gabriel Araujo', 'categoria': 'Basic', 'ativo': True}]
 
 
 def exibir_nome_do_programa():
@@ -44,8 +44,8 @@ def add_novo_cliente():
     dados_do_cliente = {'nome': nome_cliente,
                         'categoria': categoria,
                         'ativo': False}
-    clients.append(dados_do_cliente)
-    clients.append(nome_cliente)
+    clientes.append(dados_do_cliente)
+    clientes.append(nome_cliente)
     print(f"Cliente {nome_cliente} foi cadastrado com sucesso. ")
     voltar_ao_menu()
 
@@ -53,11 +53,31 @@ def add_novo_cliente():
 def listar_clientes_cadastrados():
     exibir_subtitulo('Listing clients: ')
 
-    for client in clients:
+    for client in clientes:
         client_name = client['nome']
         categoria = client['categoria']
         ativo = client['ativo']
         print(f' - {client_name} | {categoria} | {ativo}')
+    voltar_ao_menu()
+
+
+def alternar_status_do_cliente():
+    exibir_subtitulo('Alterando status do restaurante')
+    nome_cliente = input(
+        'Digite o nome do cliente que deseja alterar o status:')
+    cliente_encontrado = False
+
+    for cliente in clientes:
+        if nome_cliente == cliente['nome']:
+            cliente_encontrado = True
+            cliente['ativo'] = not cliente['ativo']
+            mensagem = f'O {nome_cliente} foi ativado com sucesso.' if cliente['ativo'] else f'O  cliente: {
+                nome_cliente} foi desativado com sucesso.'
+            print(mensagem)
+
+    if not cliente_encontrado:
+        print('Cliente nao encontrado.')
+
     voltar_ao_menu()
 
 
@@ -71,7 +91,7 @@ def chosen_option():
         elif user_option == 2:
             listar_clientes_cadastrados()
         elif user_option == 3:
-            print("Cliente validado para prosseguir com as compras")
+            alternar_status_do_cliente()
         elif user_option == 4:
             terminate_app()
         else:
