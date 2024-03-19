@@ -1,13 +1,16 @@
 import os
 
-clients = ['Gabriella Izabel', 'Andre Santana', 'Rosane Nô', 'Gabriel Araujo']
+clients = [{'nome': 'Gabriella Izabel', 'categoria': 'Premium', 'ativo': True},
+           {'nome': 'Andre Santana', 'categoria': 'Platinum', 'ativo': False},
+           {'nome': 'Rosane Nô', 'categoria': 'Gold', 'ativo': True},
+           {'nome': 'Gabriel Araujo', 'categoria': 'Basic', 'ativo': True}]
 
 
-def display_program_name():
+def exibir_nome_do_programa():
     print('𝓜𝓪𝓻𝓲𝓪 𝓡𝓸𝓼𝓪\n')
 
 
-def display_options():
+def listar_opcoes():
     print("1. Cadastrar cliente")
     print("2. Listar cliente")
     print("3. Ativar cliente")
@@ -15,38 +18,47 @@ def display_options():
 
 
 def terminate_app():
-    display_option_titles('Finalizando a aplicação')
+    exibir_subtitulo('Finalizando a aplicação')
 
 
-def back_to_main_menu():
+def voltar_ao_menu():
     input('\nChoose an option to get back to main menu.')
     main()
 
 
-def invalid_input():
+def input_invalido():
     print('Invalid option\n')
-    back_to_main_menu()
+    voltar_ao_menu()
 
 
-def display_option_titles(text):
+def exibir_subtitulo(text):
     os.system('cls')
     print(text)
     print()
 
 
-def adding_new_client():
-    display_option_titles("Cadastro de novos clientes")
-    client_name = input("Digite o nome do cliente que deseja cadastrar: ")
-    clients.append(client_name)
-    print(f"Cliente {client_name} foi cadastrado com sucesso. ")
-    back_to_main_menu()
+def add_novo_cliente():
+    exibir_subtitulo("Cadastro de novos clientes")
+    nome_cliente = input("Digite o nome do cliente que deseja cadastrar: ")
+    categoria = input('Digite o tipo de membership desejada: ')
+    dados_do_cliente = {'nome': nome_cliente,
+                        'categoria': categoria,
+                        'ativo': False}
+    clients.append(dados_do_cliente)
+    clients.append(nome_cliente)
+    print(f"Cliente {nome_cliente} foi cadastrado com sucesso. ")
+    voltar_ao_menu()
 
 
-def show_registered_clients():
-    display_option_titles('Listing clients: ')
+def listar_clientes_cadastrados():
+    exibir_subtitulo('Listing clients: ')
+
     for client in clients:
-        print(client)
-    back_to_main_menu()
+        client_name = client['nome']
+        categoria = client['categoria']
+        ativo = client['ativo']
+        print(f' - {client_name} | {categoria} | {ativo}')
+    voltar_ao_menu()
 
 
 def chosen_option():
@@ -55,23 +67,23 @@ def chosen_option():
         print(f"Opcão escolhida: {user_option}")
 
         if user_option == 1:
-            adding_new_client()
+            add_novo_cliente()
         elif user_option == 2:
-            show_registered_clients()
+            listar_clientes_cadastrados()
         elif user_option == 3:
             print("Cliente validado para prosseguir com as compras")
         elif user_option == 4:
             terminate_app()
         else:
-            invalid_input()
+            input_invalido()
     except:
-        invalid_input()
+        input_invalido()
 
 
 def main():
     os.system('cls')
-    display_program_name()
-    display_options()
+    exibir_nome_do_programa()
+    listar_opcoes()
     chosen_option()
 
 
