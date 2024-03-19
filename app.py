@@ -1,5 +1,7 @@
 import os
 
+clients = ['Gabriella Izabel', 'Andre Santana', 'Rosane Nô', 'Gabriel Araujo']
+
 
 def display_program_name():
     print('𝓜𝓪𝓻𝓲𝓪 𝓡𝓸𝓼𝓪\n')
@@ -23,15 +25,34 @@ def invalid_input():
     main()
 
 
+def adding_new_client():
+    os.system('cls')
+    print("Cadastro de novos clientes\n")
+    client_name = input("Digite o nome do cliente que deseja cadastrar: ")
+    clients.append(client_name)
+    print(f"Cliente {client_name} foi cadastrado com sucesso. ")
+    input("Digite a tecla para voltar ao menu principal.")
+    main()
+
+
+def show_registered_clients():
+    os.system('cls')
+    print('Listing all clients alrteady registered: \n')
+    for client in clients:
+        print(client)
+    input('Press any key to go back to main menu...')
+    main()
+
+
 def chosen_option():
     try:
         user_option = int(input("Escolha uma opção: "))
         print(f"Opcão escolhida: {user_option}")
 
         if user_option == 1:
-            print("Cadastrando usuario")
+            adding_new_client()
         elif user_option == 2:
-            print("Clientes presentes na base de dados: ")
+            show_registered_clients()
         elif user_option == 3:
             print("Cliente validado para prosseguir com as compras")
         elif user_option == 4:
