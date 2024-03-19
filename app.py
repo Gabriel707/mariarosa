@@ -15,33 +15,38 @@ def display_options():
 
 
 def terminate_app():
-    os.system('cls')
-    print('Closing program/application')
+    display_option_titles('Finalizando a aplicação')
+
+
+def back_to_main_menu():
+    input('\nChoose an option to get back to main menu.')
+    main()
 
 
 def invalid_input():
     print('Invalid option\n')
-    input('Choose an option to get back to main menu.')
-    main()
+    back_to_main_menu()
+
+
+def display_option_titles(text):
+    os.system('cls')
+    print(text)
+    print()
 
 
 def adding_new_client():
-    os.system('cls')
-    print("Cadastro de novos clientes\n")
+    display_option_titles("Cadastro de novos clientes")
     client_name = input("Digite o nome do cliente que deseja cadastrar: ")
     clients.append(client_name)
     print(f"Cliente {client_name} foi cadastrado com sucesso. ")
-    input("Digite a tecla para voltar ao menu principal.")
-    main()
+    back_to_main_menu()
 
 
 def show_registered_clients():
-    os.system('cls')
-    print('Listing all clients alrteady registered: \n')
+    display_option_titles('Listing clients: ')
     for client in clients:
         print(client)
-    input('Press any key to go back to main menu...')
-    main()
+    back_to_main_menu()
 
 
 def chosen_option():
