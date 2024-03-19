@@ -56,7 +56,7 @@ def listar_clientes_cadastrados():
     for client in clientes:
         client_name = client['nome']
         categoria = client['categoria']
-        ativo = client['ativo']
+        ativo = 'ativado' if client['ativo'] else 'desativado'
         print(f' - {client_name} | {categoria} | {ativo}')
     voltar_ao_menu()
 
