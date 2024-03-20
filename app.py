@@ -56,11 +56,13 @@ def add_novo_cliente():
 def listar_clientes_cadastrados():
     exibir_subtitulo('Listing clients: ')
 
+    print(f'{'Nome do cliente'.ljust(22)} | {'Categoria'.ljust(20)} | Status')
+
     for client in clientes:
         client_name = client['nome']
         categoria = client['categoria']
         ativo = 'ativado' if client['ativo'] else 'desativado'
-        print(f' - {client_name} | {categoria} | {ativo}')
+        print(f' - {client_name.ljust(20)} | {categoria.ljust(20)} | {ativo}')
     voltar_ao_menu()
 
 
