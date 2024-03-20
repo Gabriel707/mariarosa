@@ -41,6 +41,16 @@ def exibir_subtitulo(text):
 
 
 def add_novo_cliente():
+    '''Função que adiciona novo cliente a base de dados.
+
+    Inputs:
+    - Nome do Cliente
+    - Categoria do Cliente(plano escolhido)
+
+    Output:
+    - Adiciona novo cliente a base de clientes.
+
+    '''
     exibir_subtitulo("Cadastro de novos clientes")
     nome_cliente = input("Digite o nome do cliente que deseja cadastrar: ")
     categoria = input('Digite o tipo de membership desejada: ')
