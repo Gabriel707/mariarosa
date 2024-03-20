@@ -13,7 +13,7 @@ def exibir_nome_do_programa():
 def listar_opcoes():
     print("1. Cadastrar cliente")
     print("2. Listar cliente")
-    print("3. Ativar cliente")
+    print("3. Alterar status do cliente")
     print("4. Sair\n")
 
 
@@ -33,7 +33,10 @@ def input_invalido():
 
 def exibir_subtitulo(text):
     os.system('cls')
+    linha = '*' * (len(text) + 4)
+    print(linha)
     print(text)
+    print(linha)
     print()
 
 
