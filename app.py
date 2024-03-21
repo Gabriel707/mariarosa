@@ -48,7 +48,7 @@ def add_novo_cliente():
     - Categoria do Cliente(plano escolhido)
 
     Output:
-    - Adiciona novo cliente a base de clientes.
+    - Adiciona novo cliente a base de clientes em memória.
 
     '''
     exibir_subtitulo("Cadastro de novos clientes")
