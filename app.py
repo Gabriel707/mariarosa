@@ -1,5 +1,5 @@
-from modelos.cliente import Cliente
-from modelos.produto import Produtos
+from models.cliente import Cliente
+from models.produto import Produtos
 
 
 conjunto_body_01 = Produtos('Body Cachorrinho', '39.99', 'branco e bege', 'M')

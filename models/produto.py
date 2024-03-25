@@ -1,4 +1,4 @@
-from models.avaliacao_produto import Avaliacao_Produto
+from .avaliacao_produto import Avaliacao_Produto
 
 
 class Produtos():
