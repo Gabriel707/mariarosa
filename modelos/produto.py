@@ -1,4 +1,4 @@
-from .avaliacao_produto import Avaliacao_Produto
+from modelos.avaliacao_produto import Avaliacao_Produto
 
 
 class Produtos():
@@ -22,7 +22,7 @@ class Produtos():
               'PRECO'.ljust(25)} | {'Avaliacao'.ljust(25)} |{'COR\n'}')
         for produto in cls.produtos:
             print(f'{produto._nome.ljust(25)} | {
-                  produto._preco.ljust(25)} | ATIVO {produto._cor}')
+                  produto._preco.ljust(25)} | {produto.media_avaliacoes}|COR {produto._cor}')
 
     def receber_avaliacao(self, cliente, nota):
         avaliacao_produto = Avaliacao_Produto(cliente, nota)
