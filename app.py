@@ -10,9 +10,8 @@ cliente_3 = Cliente('Rosane', 'Silver')
 
 
 conjunto_body_01.receber_avaliacao(cliente_1._nome, 10)
-conjunto_body_01.receber_avaliacao(cliente_2._nome, 7)
-conjunto_body_01.receber_avaliacao(cliente_3._nome, 6)
-
+conjunto_body_01.receber_avaliacao(cliente_2._nome, 8)
+conjunto_body_01.receber_avaliacao(cliente_3._nome, 2)
 
 
 def main():

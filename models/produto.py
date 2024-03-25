@@ -21,17 +21,19 @@ class Produtos():
               'Preço'.ljust(25)} | {'Avaliacao'.ljust(25)} |{'COR\n'}')
         for produto in cls.produtos:
             print(f"{produto._nome.ljust(25)} | {
-            produto._preco.ljust(25)} | {str(produto.media_avaliacoes).ljust(25)} |COR {produto._cor}")
+                produto._preco.ljust(25)} | {str(produto.media_avaliacoes).ljust(25)} |COR {produto._cor}")
 
     def receber_avaliacao(self, cliente, nota):
-        avaliacao_produto = Avaliacao_Produto(cliente, nota)
-        self._avaliacao_produto.append(avaliacao_produto)
+        if 0 < nota <= 5:
+            avaliacao_produto = Avaliacao_Produto(cliente, nota)
+            self._avaliacao_produto.append(avaliacao_produto)
 
     @property
     def media_avaliacoes(self):
         if not self._avaliacao_produto:
-            return 0
-        soma_das_notas = sum(avaliacao_produto._nota for avaliacao_produto in self._avaliacao_produto)
+            return '-'
+        soma_das_notas = sum(
+            avaliacao_produto._nota for avaliacao_produto in self._avaliacao_produto)
         quantidade_de_notas = len(self._avaliacao_produto)
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
