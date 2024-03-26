@@ -2,6 +2,7 @@ from models.cliente import Cliente
 from models.produto import Produtos
 from models.itens.macaquinho import Macaquinho
 from models.itens.conjunto import Conjunto
+from models.itens import *
 
 
 compra_1 = Produtos('Macaquinho Florzinha', 39.90, 'M', 'Vermelho e branco')
@@ -10,7 +11,7 @@ compra_2 = Conjunto('Moletom Ursinho', 59.00, 'P',
 
 cliente_1 = Cliente('Gabriel', 'Gold')
 
-compra_1.adicionar_macaquinho_para_carrinho(Macaquinho)
+compra_1.adicionar_no_carrinho(Macaquinho)
 
 
 def main():

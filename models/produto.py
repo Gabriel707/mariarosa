@@ -1,4 +1,5 @@
 from models.avaliacao_produto import Avaliacao_Produto
+from models.itens.item_geral import ItemGeral
 
 
 class Produtos():
@@ -39,8 +40,12 @@ class Produtos():
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
 
-    def adicionar_macaquinho_para_carrinho(self, macaquinho):
-        self._carrinho.append = (macaquinho)
+#    def adicionar_macaquinho_para_carrinho(self, macaquinho):
+#        self._carrinho.append = (macaquinho)
 
-    def adicionar_conjunto_para_carrinho(self, conjunto):
-        self._carrinho.append = conjunto
+#   def adicionar_conjunto_para_carrinho(self, conjunto):
+#        self._carrinho.append = conjunto
+
+    def adicionar_no_carrinho(self, item):
+        if isinstance(item, ItemGeral):
+            self._carrinho.append(item)
