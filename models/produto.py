@@ -40,12 +40,19 @@ class Produtos():
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
 
-#    def adicionar_macaquinho_para_carrinho(self, macaquinho):
-#        self._carrinho.append = (macaquinho)
-
-#   def adicionar_conjunto_para_carrinho(self, conjunto):
-#        self._carrinho.append = conjunto
-
     def adicionar_no_carrinho(self, item):
         if isinstance(item, ItemGeral):
             self._carrinho.append(item)
+
+    @property
+    def exibir_itens_carrinho(self):
+        print(f'Cardapio do restaurante {self._nome}\n')
+        for i, item in enumerate(self._carrinho, start=1):
+            if hasattr(item, 'descricao'):
+                mensagem_macaquinho = f'{i}. Nome: {item._nome} | Preço: R${
+                    item._preco} | Descrição: {item._descricao} '
+                print(mensagem_macaquinho)
+            else:
+                mensagem_conjunto = f'{i}. Nome: {item._nome} | Preço: R${
+                    item._preco} | Descricao: {item._descricao} '
+                print(mensagem_conjunto)
