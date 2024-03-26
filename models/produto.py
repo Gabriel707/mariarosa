@@ -10,6 +10,7 @@ class Produtos():
         self._cor = cor
         self._tamanho = tamanho
         self._avaliacao_produto = []
+        self._carrinho = []
         Produtos.produtos.append(self)
 
     def __str__(self):
@@ -37,3 +38,9 @@ class Produtos():
         quantidade_de_notas = len(self._avaliacao_produto)
         media = round(soma_das_notas / quantidade_de_notas, 1)
         return media
+
+    def adicionar_macaquinho_para_carrinho(self, macaquinho):
+        self._carrinho.append = (macaquinho)
+
+    def adicionar_conjunto_para_carrinho(self, conjunto):
+        self._carrinho.append = conjunto
