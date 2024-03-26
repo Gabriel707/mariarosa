@@ -5,11 +5,9 @@ from models.itens.item_geral import ItemGeral
 class Produtos():
     produtos = []
 
-    def __init__(self, nome, preco, cor, tamanho):
+    def __init__(self, nome, preco):
         self._nome = nome
         self._preco = preco
-        self._cor = cor
-        self._tamanho = tamanho
         self._avaliacao_produto = []
         self._carrinho = []
         Produtos.produtos.append(self)
