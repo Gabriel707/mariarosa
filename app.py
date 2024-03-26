@@ -1,21 +1,20 @@
 from models.cliente import Cliente
 from models.produto import Produtos
+from models.itens.macaquinho import Macaquinho
+from models.itens.conjunto import Conjunto
 
 
-conjunto_body_01 = Produtos('Body Cachorrinho', '39.99', 'branco e bege', 'M')
+macaquinho_1 = Macaquinho('Macaquinho Florzinha',
+                          39.90, 'M', 'Vermelho e branco')
+conjuntinho_1 = Conjunto('Moletom Ursinho', 59.00, 'P',
+                         'Conjunto Moletom 100% Algodão', )
 
 cliente_1 = Cliente('Gabriel', 'Gold')
-cliente_2 = Cliente('Andre', 'Platinum')
-cliente_3 = Cliente('Rosane', 'Silver')
-
-
-conjunto_body_01.receber_avaliacao(cliente_1._nome, 10)
-conjunto_body_01.receber_avaliacao(cliente_2._nome, 8)
-conjunto_body_01.receber_avaliacao(cliente_3._nome, 2)
 
 
 def main():
-    Produtos.listar_produtos()
+    print(macaquinho_1)
+    print(conjuntinho_1)
 
 
 if __name__ == '__main__':
