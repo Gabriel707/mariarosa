@@ -47,5 +47,12 @@ class Kit():
     def exibir_itens_carrinho(self):
         print(f'Item do Kit {self._nome}\n')
         for i, item in enumerate(self._carrinho, start=1):
-            mensagem = f'{i}. Nome:{item._nome} | Preço: R${item._preco}'
-            print(mensagem)
+            if hasattr(item, 'descricao'):
+                mensagem_macaquinho = f'{i}. Nome: {
+                    item._nome} | Preço: R${item._preco} | Descricao: {item.descricao}'
+                print(mensagem_macaquinho)
+            else:
+                mensagem_coberta = f'{i}. Nome: {
+                    item._nome} | Preço: R${item._preco} | Tamanho: {item.tamanho}'
+                print(mensagem_macaquinho)
+                print(mensagem_coberta)

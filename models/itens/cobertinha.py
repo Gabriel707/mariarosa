@@ -2,9 +2,9 @@ from models.itens.item_geral import ItemGeral
 
 
 class Cobertinha(ItemGeral):
-    def __init__(self, nome, preco, descricao):
+    def __init__(self, nome, preco, tamanho):
         super().__init__(nome, preco)
-        self.descricao = descricao
+        self.tamanho = tamanho
 
     def __str__(self):
         return self._nome
