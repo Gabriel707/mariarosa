@@ -1,4 +1,4 @@
-from models.produto import Avaliacao_Produto
+from models.kit import Avaliacao_Produto
 
 
 class Cliente():
