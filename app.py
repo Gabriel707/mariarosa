@@ -1,20 +1,21 @@
 from models.cliente import Cliente
 from models.kit import *
 from models.itens.macaquinho import Macaquinho
+from models.itens.cobertinha import Cobertinha
 from models.itens import *
 
 
 cliente_1 = Cliente('Gabriel', 'Gold')
 
-compra_1 = Kit(cliente_1._nome, 39.90, 'Macaquinho Ursinho')
-
-macaquinho_1 = Macaquinho('Joaninha', 49.90, '100% algodão')
-
-compra_1.adicionar_no_carrinho(macaquinho_1)
+kit_1 = Kit('Kit BabyBlackFriday', '100% antialergico')
+kit_macaquinho = Macaquinho('Estampa de macaquinho', 69.90, 'G')
+kit_cobertas = Cobertinha('Coberta teletubies', 89.90, 'Tamanho Infantil')
+kit_1.adicionar_no_carrinho(kit_macaquinho)
+kit_1.adicionar_no_carrinho(kit_cobertas)
 
 
 def main():
-    compra_1.exibir_itens_carrinho
+    kit_1.exibir_itens_carrinho
 
 
 if __name__ == '__main__':

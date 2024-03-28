@@ -1,20 +1,20 @@
-from models.avaliacao_produto import Avaliacao_Produto
+from models.avaliacao_produto import Avaliacao_Kit
 from models.itens.item_geral import ItemGeral
 
 
 class Kit():
     kits = []
 
-    def __init__(self, nome, preco, descricao):
-        self._nome = nome
-        self._preco = preco
-        self._desricao = descricao
+    def __init__(self, nome, descricao):
+        self._nome = nome.title()
+        self._descricao = descricao.upper()
+        self._ativo = False
         self._avaliacao_kit = []
         self._carrinho = []
         Kit.kits.append(self)
 
     def __str__(self):
-        return f'{self._nome} | {self._preco}'
+        return f'{self._nome} | {self.descricao}'
 
     @classmethod
     def listar_produtos(cls):
@@ -26,7 +26,7 @@ class Kit():
 
     def receber_avaliacao(self, cliente, nota):
         if 0 < nota <= 5:
-            avaliacao_kit = Avaliacao_Produto(cliente, nota)
+            avaliacao_kit = Avaliacao_Kit(cliente, nota)
             self._avaliacao_kit.append(avaliacao_kit)
 
     @property
@@ -45,13 +45,7 @@ class Kit():
 
     @property
     def exibir_itens_carrinho(self):
-        print(f'Cardapio do restaurante {self._nome}\n')
+        print(f'Item do Kit {self._nome}\n')
         for i, item in enumerate(self._carrinho, start=1):
-            if hasattr(item, 'descricao'):
-                mensagem_macaquinho = f'{i}. Nome: {item._nome} | Preço: R${
-                    item._preco} | Descrição: {item._descricao} '
-                print(mensagem_macaquinho)
-            else:
-                mensagem_conjunto = f'{i}. Nome: {item._nome} | Preço: R${
-                    item._preco} | Descricao: {item._descricao} '
-                print(mensagem_conjunto)
+            mensagem = f'{i}. Nome:{item._nome} | Preço: R${item._preco}'
+            print(mensagem)
