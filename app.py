@@ -9,7 +9,11 @@ cliente_1 = Cliente('Gabriel', 'Gold')
 
 kit_1 = Kit('Kit BabyBlackFriday', '100% antialergico')
 kit_macaquinho = Macaquinho('Estampa de macaquinho', 69.90, 'G')
+kit_macaquinho.aplicar_desconto()
+
 kit_cobertas = Cobertinha('Coberta teletubies', 89.90, 'Infantil')
+kit_cobertas.aplicar_desconto()
+
 kit_1.adicionar_no_carrinho(kit_macaquinho)
 kit_1.adicionar_no_carrinho(kit_cobertas)
 
