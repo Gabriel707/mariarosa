@@ -2,14 +2,14 @@
 Maria Rosa Layette's &amp; Dresses | Maria Rosa Enxoval e Vestidos.
 
 ### Backend:
-
+- Django or FastAPI (To be Determined)
 
 ### ORM (Object-Relational Mapping): Hibernate
 
 ### RESTful API / RESTful Services
 - Listings
 - User accounts
-- Orders.
+- Stock
 
 ### Frontend:
 - Web Development Framework: React or Angular
